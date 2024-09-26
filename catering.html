@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/350ae1936f.js" crossorigin="anonymous"></script>
+  <title>반응형예시</title>
+</head>
+<style>
+  *{margin:0; padding:0; box-sizing: border-box;}
+  a{text-decoration: none; color: inherit;}
+  ul{list-style:none;}
+  body{font-family:"맑은 고딕", Arial;}
+  h1,h2,h3,h4,h5,h6{letter-spacing:2px; line-height:1.4;}
+  hr{border-style: 1px solid #ddd;}
+  
+  /*네비바*/
+  .top{
+    position: fixed;
+    width:100%;
+    z-index:1;
+  }
+
+  .togle{
+    display: none;
+  }
+
+  .top .navbar{
+    width:100%;
+    padding:8px 16px;
+    color:#111;
+    letter-spacing:4px;
+    background-color:white;
+    box-shadow:0 2px 5px rgba(0,0,0,0.2);
+    overflow: hidden;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navbar .home{
+    padding:8px 16px;
+  }
+
+  .navbar .right{
+    display: flex;
+  }
+
+  .navbar .right a{
+    padding: 8px 16px;
+  }
+
+  header{
+    max-width:1600px;
+    margin:0 auto;
+    position: relative;
+  }
+
+  header img{
+    width:100%;
+    height:auto;
+    display: block;
+  }
+
+header .title{
+  position:absolute;
+  bottom:0;left:0;
+}
+
+header .title h1{
+  font-size:32px;
+  padding:10px 30px;
+  opacity:0.6;
+}
+
+.content{
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.content h1{
+  text-align: center;
+  margin:10px 0 35px;
+  font-size:36px;
+}
+
+#about {
+  padding:64px 0;
+  display: flex;
+}
+
+#about > div{
+  width:50%;
+  padding:12px 24px;
+}
+
+#about > .img > img{
+  width:100%;
+  height:auto;
+  opacity:0.8;
+  border-radius: 4px;
+}
+
+#about .txt h5{
+  font-size: 20px;
+  line-height:4;
+}
+
+#about .txt p{
+  font-size: 18px;
+  line-height:1.7;
+}
+
+#menu{
+  display: flex;
+}
+
+#menu > div{
+  width:50%;
+  margin:64px 0;
+}
+
+#menu img{
+  width:100%;
+  height:auto;
+  opacity:0.8;
+  border-radius:10px;
+}
+
+#menu .txt{
+  line-height:2.7;
+  padding-right:30px;
+}
+
+#menu .txt h1{
+  padding:20px;
+}
+
+#contact{
+  width:100%;
+text-align: center;
+  line-height:2;
+  margin:64px 0;
+}
+
+footer{
+  background-color: #111;
+  width:100%;
+  height:80px;
+  color: white;
+  text-align: center;
+  line-height: 5;
+}
+
+@media screen and (max-width:768px){
+  .togle{
+    display: block;
+    width:100%;
+    font-size:30px;
+    padding: 30px;
+    border-bottom: 1px solid #777;
+    background-color: white;
+  }
+  .top>.navbar, .right{
+    width:100%;
+    height:160px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;
+  }
+  .togle:hover .navbar{
+    display: block;
+  }
+
+  .right>a:hover{
+    width:100%;
+    text-align: center;
+    background-color: #333;
+    color: white;
+  }
+
+  #home img{
+    padding-top:140px;
+  }
+
+  #about, #menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #contact{
+    padding:0 50px;
+  }
+
+  form input{
+    width:80%;
+    height:50px;
+    font-size: 20px;
+    margin-top:20px;
+    border-radius:10px;
+    border:1px solid #777;
+    padding:0 30px;
+  }
+
+  button{
+    width:50%;
+    height:50px;
+    margin-top:30px;
+    background-color: transparent;
+    border:1px solid #777;
+    border-radius:10px;
+  }
+
+  .color{
+    margin:10px 0;
+    padding:10px 0;
+    border-top:1px solid #777;
+    border-bottom:1px solid #777;
+    color:cornflowerblue;
+  }
+  
+}
+</style>
+<body>
+  <!-- Navbar 상단고정 -->
+<div class="top">
+<a href="#" class="togle"><i class="fa-solid fa-list" style="color: #27282b;"></i></a>
+  <div class="navbar">
+    <a class="home" href="#home">Gourmet au Catering</a>
+    <!-- 오른쪽 Navbar 링크 -->
+    <div class="right">
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Contact</a>
+    </div><!--right END-->
+  </div><!--navbar END-->
+</div><!--top END-->
+
+<!-- Header -->
+<header id="home">
+  <img src="img/main.jpg" alt="Hamburger Catering" width="1600" height="800">
+  <div class="title">
+    <h1>Le Catering</h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="content">
+
+  <!-- About Section -->
+  <div id="about">
+    <div class="img">
+     <img src="img/plating.jpg" alt="Table Setting" width="600" height="750">
+    </div>
+    <div class="txt">
+      <h1>About Catering</h1><br>
+      <h5>Tradition since 1889</h5>
+      <p>Gourmet au Catering은 단순히 <span>'먹는 것'</span> 그 이상의 새로운 식문화를 제안합니다.
+	<br>먹는 행위의 목적인 미각의 만족, 생존을 위한 영양공급, 건강에 대한 열망뿐만아니라 
+	섭취자의 라이프스타일에 미치는 영향까지 고려하여 식품을 설계합니다.<br>
+	Gourmet au Catering은 오감의 만족, 영양적인 균형, 과학적인 건강성, 간편성과 휴대성, 
+	합리성과 경제성의 가치를 실현하기 위해 소비자의 식습관 및 섭취 패턴과 같은 
+	라이프스타일을 심도있게 연구합니다.</p>
+      <p class="grey"> 
+	Gourmet au Catering은 미술관과 갤러리를 중심으로 행사성격과 장소에 따른 맞춤식 전시 오프닝 
+	리셉션과 공연 리셉션을 전문으로 하며 그외 출판기념회, 론칭파티 병원 개원파티 등 맛과 멋이 
+	어울어진 다양한 메뉴와 데코레이션 그리고 최상의 서비스로 다양한 파티를 준비해드립니다. </p>
+    </div>
+  </div><!--about END-->
+  
+  <hr>
+  
+	<!-- Menu Section -->
+  <div id="menu">
+    <div class="txt">
+      <h1>Our Menu</h1><br>
+      <h4>리코타치즈올리브 샐러드</h4>
+      <p>리코타치즈, 토마토, 올리브, 야채가 어우러진 담백한 샐러드 &#92;5,800</p><br>
+    
+      <h4>허브 치킨 가든 샐러드</h4>
+      <p>로즈마리를 마리네이드한 담백한 로스트 치킨과 신선한 야채, 토마토가 어우러진 샐러드 
+	&#92;5,500</p><br>
+    
+      <h4>벨기에 와플</h4>
+      <p>와플 고유의 쫄깃하면서 바삭한 식감을 즐길 수 있는 벨기에 와플 &#92;3,000 </p><br>
+    
+      <h4>크로크무슈</h4>
+      <p>치즈의 풍미가 돋보이는 프랑스식 샌드위치 &#92;6,000</p><br>
+    
+      <h4>햄 치즈 포카치아</h4>
+      <p>크렌베리가 쏙 들어간 포카치아 번에 치즈와 햄으로 영양을 더한 핫브레드 &#92;6,000</p>    
+    </div>
+    <div class="img">
+      <img src="img/ourmenu.jpg" alt="Menu">
+    </div>
+  </div>
+  
+  <hr>
+  
+	<!-- Contact Section -->
+  <div id="contact">
+    <h1>Contact</h1><br>
+    <p>Gourmet au Catering은 최근 트랜드인 실용주의 정신을 담아
+ 	가벼운 가격에 맛있는 음식을 제공하는 케이터링 서비스 입니다.</p>
+    <p class="color">
+          <b>Catering Service : 경기도 안산시 단원구 고잔동 541-1(중앙대로 921) 동서코아빌딩 3F</b>
+    </p>
+    <p>Phone : 000-000-0000<br> e-mail : catering@catering.com</p>
+    
+    <form action="" target="_blank">
+      <p><input type="text" placeholder="Name" required name="Name"></p>
+	<!--required : 값이 입력되지 않았거나 check/select되지 않았을 경우 
+	브라우져에 있는 알림 화면이 나타납니다.-->
+      <p><input type="number" placeholder="How many people" required name="People"></p>
+      <p><input type="datetime-local" placeholder="Date and time" required name="date" 
+	value="2017-11-16T20:00"></p>
+      <p><input type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+      <p><button type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+</div><!--contant END-->
+
+<!-- Footer -->
+<footer>
+  <p>
+	  &copy; COPYRIGHT BY 
+		<a href="" title="" target="_blank" class="">jmk255@naver.com</a>
+    ALL RIGHTS RESERVED
+  </p>
+</footer>
+</body>
+</html>
